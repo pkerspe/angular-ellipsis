@@ -65,7 +65,8 @@ angular.module('dibari.angular-ellipsis', [])
 			ellipsisUseParent: '@',
 			ellipsisSeparatorReg: '=',
 			ellipsisMaxLines: '@',
-			ellipsisFallbackFontSize: '@'
+			ellipsisDefaultFontSize: '@',
+            ellipsisFallbackFontSize: '@'
 		},
 		compile: function(elem, attr, linker) {
 
@@ -100,6 +101,11 @@ angular.module('dibari.angular-ellipsis', [])
 						binding = $sce.getTrustedHtml(binding);
 					}
 					if (binding) {
+					    //reset font size to default, in case fallback font size has been applied before
+                        if (_isDefined(scope.ellipsisDefaultFontSize)) {
+                            element.css('font-size', scope.ellipsisDefaultFontSize);
+                        }
+
 						var isHtml = (!(!!scope.ngBind) && !!(scope.ngBindHtml));
 						var i = 0,
 							useParent = attributes.ellipsisUseParent || attributes.useParent,
