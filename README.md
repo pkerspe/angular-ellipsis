@@ -1,3 +1,5 @@
+A fork of dibari/angular-ellipsis with some pull requests that are ignored on the dibari/angular-ellipsis project for a while.
+
 angular-ellipsis
 ================
 
