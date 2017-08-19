@@ -1,12 +1,12 @@
 {
-	"name": "angular-ellipsis",
-	"version": "0.1.7",
-	"description" : "Angular directive to truncate multi-line text",
+	"name": "pkerspe-angular-ellipsis",
+	"version": "0.1.7.1",
+	"description" : "A fork of Angular directive to truncate multi-line text from Eric Di Bari",
 	"authors" : [
-		"Eric Di Bari"
+		"Paul Kerspe"
 	],
 	"license": "Apache License, v2.0",
-	"homepage" : "https://github.com/dibari/angular-ellipsis",
+	"homepage" : "https://github.com/pkerspe/angular-ellipsis",
 	"main": "./src/angular-ellipsis.js",
 	"keywords": [
 		"angular",
