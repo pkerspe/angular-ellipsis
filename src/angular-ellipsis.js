@@ -151,14 +151,14 @@ angular.module('dibari.angular-ellipsis', [])
 							var initialMaxHeight = useParent ? getParentHeight(element) : element[0].clientHeight;
 
 							var separatorLocations = [];
-							while ((match = ellipsisSeparatorReg.exec(binding)) != null) {
+							while ((match = ellipsisSeparatorReg.exec(binding)) !== null) {
 								separatorLocations.push(match.index);
 							}
 
 							// We know the text overflows and there are no natural breakpoints so we build a new index
 							// With this index it will search for the best truncate location instead of for the best ellipsisSeparator location
 							if (separatorLocations.length === 0) {
-								var textLength = minimumTruncateLength = 5;
+								var textLength = 5;
 								while (textLength <= binding.length) {
 									separatorLocations.push(textLength);
 									textLength = textLength * 2;
@@ -275,7 +275,7 @@ angular.module('dibari.angular-ellipsis', [])
 				 *    Execute ellipsis truncate when element becomes visible
 				 */
 				scope.$watch(function() {
-					return element[0].offsetWidth != 0 && element[0].offsetHeight != 0
+					return element[0].offsetWidth !== 0 && element[0].offsetHeight !== 0;
 				}, function() {
 					asyncDigestDebounced.add(buildEllipsis);
 				});
